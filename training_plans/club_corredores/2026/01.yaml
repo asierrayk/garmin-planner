@@ -1,0 +1,47 @@
+config:
+  paces:
+    pace400: 3:45-3:35
+    pace500: 3:55-3:45
+    pace800: 4:02-3:52
+    pace1k: 4:00-4:10
+    pace1k500: 4:05-4:15
+    race5k: 5km in 19:45
+    race10k: 10km in 39:45
+    halfmarathon: 21.1km in 1:39:45
+    marathon: 42.2km in 03:40:00
+  margins:
+    faster: 0:03
+    slower: 0:03
+  name_prefix: '2026 01 '
+
+14 Fartlek 3x(1'F-1'S + 2'F-1'S) rec 3' + series 4x500m rec 1':
+- repeat 3:
+  - interval: 1min at 3:30
+  - recovery: 1min -- Jogging
+  - interval: 2min at 3:30
+  - recovery: 1min -- Jogging
+- recovery: 3min
+- repeat 4:
+  - interval: 500m at 3:30
+  - recovery: 1min
+
+21 Fartlek 12x(1F-1S) rec 2':
+- repeat 12:
+  - interval: 1min at 3:30
+  - recovery: 1min -- Jogging
+
+28 Fartlek 2x(2'-3'-4'-3'-2') rec 1':
+- repeat 2:
+  - interval: 2min
+  - recovery: 1min
+  - interval: 3min
+  - recovery: 1min
+  - interval: 4min
+  - recovery: 1min
+  - interval: 3min
+  - recovery: 1min
+  - interval: 2min
+  - recovery: 1min
+
+31 III La matanza:
+- interval: 5km @ race5k

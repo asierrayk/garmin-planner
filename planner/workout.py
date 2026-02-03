@@ -127,6 +127,7 @@ class WorkoutStep:
             "stepId": None,
             "stepOrder": self.order,
             "childStepId": self.child_step_id,
+            # "skipLastRestStep": null,
             "stepType": {
                 "stepTypeId": STEP_TYPES[self.step_type],
                 "stepTypeKey": self.step_type,
