@@ -42,6 +42,3 @@ config:
   - recovery: 1min
   - interval: 2min
   - recovery: 1min
-
-31 III La matanza:
-- interval: 5km @ race5k
