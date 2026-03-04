@@ -226,8 +226,9 @@ def get_end_condition(step_txt):
     step_txt = clean_step(step_txt)
     p_distance = re.compile(r'^\d+(m|km)\s?')
     p_time = re.compile(r'^\d+(min|h|s)\s?')
+    p_mmss = re.compile(r'^\d{1,2}:\d{2}$')
     p_iterations = re.compile(r'^\d+$')
-    if p_time.match(step_txt):
+    if p_time.match(step_txt) or p_mmss.match(step_txt):
         return 'time'
     elif p_distance.match(step_txt):
         return 'distance'
@@ -242,18 +243,28 @@ def get_end_condition_value(step_txt, condition_type=None):
         condition_type = get_end_condition(step_txt)
     
     if condition_type == 'time':
+        # Soporta formatos como 90s, 2min, 1:30, 01:30, 1h
         p = re.compile(r'^(\d+)((min|h|s))\s?')
         m = p.match(step_txt)
-        cv = int(m.group(1))
-        tu = m.group(2)
-        if tu == 'h':
-            cv = cv * 60 * 60
-        elif tu == 'min':
-            cv = cv * 60
-        elif tu == 's':
-            cv = cv
-
-        return str(cv)
+        if m:
+            cv = int(m.group(1))
+            tu = m.group(2)
+            if tu == 'h':
+                cv = cv * 60 * 60
+            elif tu == 'min':
+                cv = cv * 60
+            elif tu == 's':
+                cv = cv
+            return str(cv)
+        # Soporta formato mm:ss
+        p_mmss = re.compile(r'^(\d{1,2}):(\d{2})$')
+        m2 = p_mmss.match(step_txt)
+        if m2:
+            minutos = int(m2.group(1))
+            segundos = int(m2.group(2))
+            total = minutos * 60 + segundos
+            return str(total)
+        raise ValueError(f"Invalid time format for step: {step_txt}")
     elif condition_type == 'distance':
         p = re.compile(r'^(\d+)((m|km))\s?')
         m = p.match(step_txt)

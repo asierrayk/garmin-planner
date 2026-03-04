@@ -19,13 +19,13 @@ config:
 4 3x500 3x300 2x500 1k:
 - repeat 3:
   - interval: 500m at pace500
-  - rest: 1:30 -- Descanso
+  - rest: 90s -- Descanso
 - repeat 3:
   - interval: 300m at pace300
   - rest: 1min -- Descanso
 - repeat 2:
   - interval: 500m at pace500
-  - rest: 1:30 -- Descanso
+  - rest: 90s -- Descanso
 - interval: 1km
 
 11 3x(3x500):
@@ -48,7 +48,7 @@ config:
   - rest: 1min -- Descanso
 - repeat 2:
   - interval: 800m at pace800
-  - rest: 1:30 -- Descanso
+  - rest: 90s -- Descanso
 - repeat 2:
   - interval: 1km at pace1k
   - rest: 2min -- Descanso

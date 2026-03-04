@@ -1,0 +1,49 @@
+# https://www.clubcorredores.com/entrenamientos-2025-2026/
+config:
+  paces:
+    fast: 3:35-3:25
+    slow: 4:55-5:05
+    pace400: 3:45-3:35
+    pace500: 3:55-3:45
+    pace800: 4:02-3:52
+    pace1k: 4:00-4:10
+    pace1500: 4:05-4:15
+    race5k: 5km in 19:45
+    race10k: 10km in 39:45
+    halfmarathon: 21.1km in 1:39:45
+    marathon: 42.2km in 03:40:00
+  margins:
+    faster: 0:03
+    slower: 0:03
+  name_prefix: '2026 03 '
+
+4 Series 1x1500m + 3x1000m + 4x500m:
+  - interval: 1500m at pace1500
+  - rest: 2min -- Descanso
+  - repeat 3:
+      - interval: 1000m at pace1k
+      - rest: 1:30 -- Descanso
+  - repeat 4:
+      - interval: 500m at pace500
+      - rest: 1min -- Descanso
+
+11 Series 7x800m:
+  - repeat 7:
+      - interval: 800m at pace800
+      - rest: 1:30 -- Descanso
+
+18 Series 5x1000m (los 2º 500m más exigentes):
+  - repeat 5:
+      - interval: 1000m at pace1k
+      - rest: 1:30 -- Descanso
+
+25 Series 1x1000m + 2x800m + 4x500m + 1x1000m:
+  - interval: 1000m at pace1k
+  - rest: 2min -- Descanso
+  - repeat 2:
+      - interval: 800m at pace800
+      - rest: 1:30 -- Descanso
+  - repeat 4:
+      - interval: 500m at pace500
+      - rest: 1:15 -- Descanso
+  - interval: 1000m at pace1k
