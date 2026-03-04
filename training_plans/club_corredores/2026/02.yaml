@@ -30,17 +30,10 @@ config:
 
 11 3x(3x500):
 - repeat 3:
-  - interval: 500m at pace500
-  - rest: 1min -- Descanso
-- rest: 2min
-- repeat 3:
-  - interval: 500m at pace500
-  - rest: 1min -- Descanso
-- rest: 2min
-- repeat 3:
-  - interval: 500m at pace500
-  - rest: 1min -- Descanso
-- rest: 2min
+  - repeat 3:
+    - interval: 500m at pace500
+    - rest: 1min -- Descanso
+  - rest: 2min
 
 18 2x500 2x800 2x1k 2x1500:
 - repeat 2:

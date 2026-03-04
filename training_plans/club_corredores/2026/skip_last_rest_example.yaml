@@ -1,0 +1,11 @@
+config:
+  paces:
+    fast: 3:35-3:25
+    slow: 4:55-5:05
+    pace500: 3:55-3:45
+  name_prefix: 'test '
+
+1 Test skip last rest:
+  - repeat 4*:
+      - interval: 500m at pace500
+      - rest: 1min -- Descanso

@@ -65,6 +65,7 @@ class WorkoutStep:
         end_condition="lap.button",
         end_condition_value=None,
         target=None,
+        skip_last_rest=False,
     ):
         """Valid end condition values:
         - distance: '2.0km', '1.125km', '1.6km'
@@ -77,6 +78,7 @@ class WorkoutStep:
         self.end_condition = end_condition
         self.end_condition_value = end_condition_value
         self.target = target or Target()
+        self.skip_last_rest = skip_last_rest
         self.child_step_id = 1 if self.step_type == 'repeat' else None
         self.workout_steps = []
 
@@ -145,6 +147,8 @@ class WorkoutStep:
         if self.step_type == 'repeat':
             base_json['smartRepeat'] = True
             base_json['numberOfIterations'] = self.end_condition_value
+            if self.skip_last_rest:
+                base_json['skipLastRestStep'] = True
         else:
             base_json.update({
                 "description": self.description,
