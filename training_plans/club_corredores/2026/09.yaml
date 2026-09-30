@@ -1,0 +1,27 @@
+# https://www.clubcorredores.com/Entrenamientos_2026-2027/Junio/VILLALBA.pdf
+config:
+  paces:
+    fast: 3:35-3:25
+    slow: 4:55-5:05
+    pace400: 3:45-3:35
+    pace500: 3:55-3:45
+    pace800: 4:02-3:52
+    pace1k: 4:00-4:10
+    pace1500: 4:05-4:15
+    race5k: 5km in 19:45
+    race10k: 10km in 39:45
+    halfmarathon: 21.1km in 1:39:45
+    marathon: 42.2km in 03:40:00
+  margins:
+    faster: 0:03
+    slower: 0:03
+  name_prefix: '2026 09 '
+
+30 Fartlek 6x(45''-1'-45''):
+  - repeat 6*:
+      - interval: 45s at fast -- Rápido
+      - recovery: 45s -- Jogging
+      - interval: 1min at fast -- Rápido
+      - recovery: 1min -- Jogging
+      - interval: 45s at fast -- Rápido
+      - recovery: 45s -- Jogging

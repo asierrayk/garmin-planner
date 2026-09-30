@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Import training (open file)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/garmin_planner.py",
+      "args": ["import", "--workouts-file", "${file}"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Import training --replace (open file)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/garmin_planner.py",
+      "args": ["import", "--workouts-file", "${file}", "--replace"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Import training --dry-run (open file)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/garmin_planner.py",
+      "args": ["import", "--workouts-file", "${file}", "--dry-run"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
